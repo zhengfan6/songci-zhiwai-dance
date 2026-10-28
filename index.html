@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="古典舞《宋词之外》逐拍分解：八句六十四拍，每一拍都有名字。">
+<meta property="og:title" content="《宋词之外》· 逐拍分解">
+<title>《宋词之外》· 逐拍分解（八句六十四拍）</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#F6F2EA;--paper:#FFFDF8;--ink:#23201D;--muted:#7C7369;--accent:#A6392C;--accent2:#4C6570;--line:rgba(35,32,29,.12)}
+  body{background:var(--bg);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB",sans-serif;line-height:1.7;overflow-x:hidden;padding:0 0 60px;-webkit-font-smoothing:antialiased}
+  .serif{font-family:"Songti SC","Noto Serif SC",serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 16px}
+  .note{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14px;color:#4A443D;margin:26px 0 0}
+  .note b{color:var(--accent)}
+  h2{font-family:"Songti SC","Noto Serif SC",serif;font-size:18px;font-weight:600;display:flex;align-items:center;gap:9px;margin:36px 0 14px}
+  h2::before{content:"";width:7px;height:7px;background:var(--accent);border-radius:50%}
+  table.out{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
+  table.out th{text-align:left;font-weight:400;color:var(--muted);font-size:12px;padding:10px 12px;border-bottom:1px solid var(--line)}
+  table.out td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+  table.out tr:last-child td{border-bottom:0}
+  table.out td.s{font-family:"Songti SC",serif;color:var(--accent2);white-space:nowrap}
+  .ph{margin:30px 0 0;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 2px 14px rgba(35,32,29,.04)}
+  .phhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .phno{font-family:"Songti SC",serif;font-size:19px;font-weight:600;color:var(--accent)}
+  .phsum{font-size:13px;color:var(--accent2)}
+  .phtime{margin-left:auto;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .score{display:flex;align-items:center;gap:6px;margin:0 0 12px;flex-wrap:wrap}
+  .score .lab{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 5px;line-height:17px}
+  .score i{font-style:normal;font-family:"Songti SC",serif;font-size:15px;width:24px;height:24px;display:grid;place-items:center;background:rgba(166,57,44,.07);border-radius:4px;color:#6B4A3F}
+  img.strip{width:100%;display:block;border-radius:8px;border:1px solid var(--line)}
+  img.only-m{display:none}
+  @media(max-width:640px){ img.only-d{display:none} img.only-m{display:block} }
+  ul.beats{list-style:none;margin-top:12px;display:grid;gap:2px}
+  ul.beats li{display:flex;gap:10px;align-items:flex-start;padding:7px 2px;border-bottom:1px dashed var(--line)}
+  ul.beats li:last-child{border-bottom:0}
+  .no{flex:none;width:20px;height:20px;border-radius:50%;background:rgba(35,32,29,.06);color:#4A443D;font-size:11px;display:grid;place-items:center;margin-top:3px;font-variant-numeric:tabular-nums}
+  ul.beats div{flex:1;min-width:0}
+  ul.beats b{font-size:14px;font-weight:500}
+  ul.beats em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.55}
+  .tm{flex:none;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:3px}
+  ol.steps{list-style:none;counter-reset:s;display:grid;gap:10px}
+  ol.steps li{counter-increment:s;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 15px 13px 46px;position:relative;font-size:14.5px}
+  ol.steps li::before{content:counter(s);position:absolute;left:14px;top:13px;width:21px;height:21px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;display:grid;place-items:center}
+  ol.steps span{color:var(--muted);display:block;font-size:13.5px}
+  .files{font-size:13.5px;color:#4A443D;line-height:2.1}
+  .files code{background:rgba(35,32,29,.055);border-radius:4px;padding:1px 6px;font-size:12px;color:#3E3831}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;letter-spacing:.08em}
+  @media(min-width:620px){ ul.beats{grid-template-columns:1fr 1fr;column-gap:22px} }
+  footer a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(166,57,44,.35);display:inline-block;margin-top:8px}
+  .files a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(166,57,44,.3)}
+  header{padding:54px 0 26px;text-align:center;position:relative}
+  .kicker{font-size:11.5px;letter-spacing:.44em;color:var(--muted);text-indent:.44em}
+  h1.piece{font-family:"Songti SC","Noto Serif SC",serif;font-size:clamp(32px,8.6vw,56px);font-weight:600;letter-spacing:.18em;text-indent:.18em;margin:16px 0 0;line-height:1.24}
+  h1.piece em{font-style:normal;color:var(--accent)}
+  h1.piece .mk{font-size:.58em;color:#C0B7AA;font-weight:400;letter-spacing:0;vertical-align:.08em}
+  .tag{font-family:"Songti SC","Noto Serif SC",serif;font-size:15px;letter-spacing:.2em;color:#8B8175;margin:16px 0 0}
+  .sub{color:var(--muted);font-size:14px;margin-top:14px;line-height:1.85}
+  .rule{width:44px;height:1px;background:var(--accent);margin:24px auto 0;opacity:.5}
+  .seal{position:absolute;right:4px;top:52px;width:40px;height:40px;border:1.4px solid rgba(166,57,44,.5);border-radius:3px;color:rgba(166,57,44,.82);font-family:"Songti SC","Noto Serif SC",serif;font-size:15px;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:0;display:grid;place-items:center}
+  .switch{display:flex;justify-content:center;align-items:center;gap:11px;margin-top:20px;font-size:12.5px;letter-spacing:.08em}
+  .switch a{color:var(--muted);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+  .switch a.on{color:var(--accent);border-bottom-color:rgba(166,57,44,.45)}
+  .switch i{width:3px;height:3px;border-radius:50%;background:#C6BEB3;display:block}
+  @media(max-width:560px){ .seal{display:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">古 典 舞 · 逐 拍 分 解</div>
+    <h1 class="piece"><span class="mk">《</span>宋词<em>之外</em><span class="mk">》</span></h1>
+    <p class="tag">八句 · 六十四拍</p>
+    <p class="sub">每一拍，都有一个名字。<br>漏掉的从来不是动作本身，是动作与动作之间的那一拍。</p>
+    <div class="rule"></div>
+    <nav class="switch"><a class="on" href="./index.html">逐拍分解</a><i></i><a href="./overview.html">口诀版</a></nav>
+    <div class="seal">宋詞</div>
+  </header>
+
+  <div class="note">
+    <b>怎么用：</b>先看每句的「谱」——八个字就是八个动作的骨架。念着谱听老师那段原视频，数到第几拍，就看这一拍对应的那一格。
+    一句跳顺了再跳下一句。<b>拍号是我按老师数拍对出来的</b>，你听着数，如果哪一拍对不上，以你听到的为准。
+  </div>
+
+  <h2>八句大纲</h2>
+  <table class="out">
+    <tr><th>句</th><th>时间</th><th>这一句在干什么</th></tr>
+    <tr><td class="s">一</td><td>0–9s</td><td>开手起势，上托，转成弓步推掌</td></tr>
+    <tr><td class="s">二</td><td>10–18s</td><td>换边重复，收在提膝托掌</td></tr>
+    <tr><td class="s">三</td><td>20–28s</td><td>亮相、俯身下压、起身接后抬腿</td></tr>
+    <tr><td class="s">四</td><td>29–37s</td><td>探海、云手、仰身，全是转折</td></tr>
+    <tr><td class="s">五</td><td>38–47s</td><td>上举、前推，往中间走位</td></tr>
+    <tr><td class="s">六</td><td>48–56s</td><td>后腿、提膝、平开，边走边转</td></tr>
+    <tr><td class="s">七</td><td>57–66s</td><td>后仰开手，收合走位</td></tr>
+    <tr><td class="s">八</td><td>67–75s</td><td>合抱推掌，走上交叉步接后腿</td></tr>
+    <tr><td class="s">尾</td><td>76–79s</td><td>后腿控制，定格，收势</td></tr>
+  </table>
+
+  <h2>逐拍分解</h2>
+  
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第一句</span>
+        <span class="phsum">开手 · 上托 · 推掌 · 收手</span>
+        <span class="phtime">1–9s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>起</i><i>开</i><i>沉</i><i>托</i><i>抱</i><i>推</i><i>斜</i><i>收</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b01.jpg" alt="第1句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b02.jpg" alt="第1句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>起势站定</b><em>双手垂在体侧，重心在左腿</em></div><span class="tm">0.8s</span></li><li><span class="no">2</span><div><b>开手成山膀</b><em>双臂向两侧平开，手心向下</em></div><span class="tm">2.0s</span></li><li><span class="no">3</span><div><b>沉手左转</b><em>手往下沉，身体往左带</em></div><span class="tm">3.2s</span></li><li><span class="no">4</span><div><b>双托上举</b><em>双手托到头顶，脚跟立起</em></div><span class="tm">4.4s</span></li><li><span class="no">5</span><div><b>头顶合抱</b><em>两手在头上合住，转向右</em></div><span class="tm">5.5s</span></li><li><span class="no">6</span><div><b>弓步推掌</b><em>前腿屈成弓步，一手向前推</em></div><span class="tm">6.7s</span></li><li><span class="no">7</span><div><b>斜线前压</b><em>双臂拉成斜线，身体压下去</em></div><span class="tm">7.9s</span></li><li><span class="no">8</span><div><b>收手点地</b><em>双手收回，脚尖点地转回左前</em></div><span class="tm">9.1s</span></li></ul>
+    </section>
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第二句</span>
+        <span class="phsum">斜线 · 平开 · 上举 · 提膝</span>
+        <span class="phtime">10–18s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>垂</i><i>错</i><i>斜</i><i>平</i><i>举</i><i>收</i><i>提</i><i>分</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b03.jpg" alt="第2句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b04.jpg" alt="第2句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>垂手左转</b><em>手臂放下，身体左转</em></div><span class="tm">10.2s</span></li><li><span class="no">2</span><div><b>一前一后</b><em>两臂前后错开，一上一下</em></div><span class="tm">11.4s</span></li><li><span class="no">3</span><div><b>斜线弓步</b><em>弓步加深，双臂拉成斜线</em></div><span class="tm">12.6s</span></li><li><span class="no">4</span><div><b>侧平打开</b><em>双臂平开到肩高</em></div><span class="tm">13.8s</span></li><li><span class="no">5</span><div><b>双臂上举</b><em>双手举过头顶，两腿分开</em></div><span class="tm">15.0s</span></li><li><span class="no">6</span><div><b>收手换重心</b><em>手收回体侧，重心换到单腿</em></div><span class="tm">16.1s</span></li><li><span class="no">7</span><div><b>提膝双托</b><em>一膝提到腰高，双手头上合抱</em></div><span class="tm">17.3s</span></li><li><span class="no">8</span><div><b>分腿侧转</b><em>另一条腿抬起，身体侧转</em></div><span class="tm">18.5s</span></li></ul>
+    </section>
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第三句</span>
+        <span class="phsum">亮相 · 俯身 · 起身 · 后抬</span>
+        <span class="phtime">20–28s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>亮</i><i>抱</i><i>倾</i><i>压</i><i>起</i><i>斜</i><i>平</i><i>后</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b05.jpg" alt="第3句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b06.jpg" alt="第3句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>单臂亮相</b><em>一臂上举、一臂前伸，亮住</em></div><span class="tm">19.7s</span></li><li><span class="no">2</span><div><b>头上合抱</b><em>双手在头顶合，脚尖前点</em></div><span class="tm">20.9s</span></li><li><span class="no">3</span><div><b>前倾下探</b><em>上身向前倾，双手往前下伸</em></div><span class="tm">22.0s</span></li><li><span class="no">4</span><div><b>俯身压掌</b><em>继续压下去，手到膝前</em></div><span class="tm">23.2s</span></li><li><span class="no">5</span><div><b>起身亮相</b><em>直起来，一臂上举</em></div><span class="tm">24.4s</span></li><li><span class="no">6</span><div><b>斜线倾身</b><em>双臂一上一下，身体侧倾</em></div><span class="tm">25.6s</span></li><li><span class="no">7</span><div><b>侧平前倾</b><em>双臂平开，上身仍然前倾</em></div><span class="tm">26.7s</span></li><li><span class="no">8</span><div><b>后抬转身</b><em>后腿抬起，身体转过去</em></div><span class="tm">27.9s</span></li></ul>
+    </section>
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第四句</span>
+        <span class="phsum">探海 · 云手 · 开手 · 仰身</span>
+        <span class="phtime">29–37s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>探</i><i>高</i><i>斜</i><i>抱</i><i>伸</i><i>仰</i><i>云</i><i>开</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b07.jpg" alt="第4句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b08.jpg" alt="第4句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>后腿探海</b><em>后腿伸直向后抬，一手上举</em></div><span class="tm">29.1s</span></li><li><span class="no">2</span><div><b>后腿双托</b><em>后腿抬更高，双手上举</em></div><span class="tm">30.3s</span></li><li><span class="no">3</span><div><b>大斜线转</b><em>双臂拉成大斜线，身体转右</em></div><span class="tm">31.5s</span></li><li><span class="no">4</span><div><b>云手抱弓</b><em>双手划圆抱回，落成弓步</em></div><span class="tm">32.6s</span></li><li><span class="no">5</span><div><b>开手前伸</b><em>一手前伸、一手后拉</em></div><span class="tm">33.8s</span></li><li><span class="no">6</span><div><b>上举后仰</b><em>双手上举，上身微微后仰</em></div><span class="tm">35.0s</span></li><li><span class="no">7</span><div><b>云手右抱</b><em>双手在右上方抱圆</em></div><span class="tm">36.2s</span></li><li><span class="no">8</span><div><b>开手左前</b><em>双臂打开，身体朝左前</em></div><span class="tm">37.3s</span></li></ul>
+    </section>
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第五句</span>
+        <span class="phsum">上举 · 前推 · 走中 · 交叉</span>
+        <span class="phtime">39–47s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>举</i><i>抱</i><i>推</i><i>合</i><i>推</i><i>收</i><i>平</i><i>叉</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b09.jpg" alt="第5句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b10.jpg" alt="第5句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>上举点地</b><em>双臂上举，脚尖前点</em></div><span class="tm">38.5s</span></li><li><span class="no">2</span><div><b>合抱转右</b><em>双手合抱上举，转向右</em></div><span class="tm">39.7s</span></li><li><span class="no">3</span><div><b>云手前推</b><em>双手划圆之后向前推</em></div><span class="tm">40.9s</span></li><li><span class="no">4</span><div><b>合手转右</b><em>双手收到身前，转向右</em></div><span class="tm">42.1s</span></li><li><span class="no">5</span><div><b>推掌朝左</b><em>双手前推，身体朝左</em></div><span class="tm">43.2s</span></li><li><span class="no">6</span><div><b>收手走中</b><em>手收回，往中间走位</em></div><span class="tm">44.4s</span></li><li><span class="no">7</span><div><b>侧平打开</b><em>双臂平开，正对镜子</em></div><span class="tm">45.6s</span></li><li><span class="no">8</span><div><b>开手交叉</b><em>手打开，脚下走交叉步</em></div><span class="tm">46.8s</span></li></ul>
+    </section>
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第六句</span>
+        <span class="phsum">后腿 · 提膝 · 平开 · 转身</span>
+        <span class="phtime">48–56s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>后</i><i>立</i><i>平</i><i>提</i><i>弓</i><i>错</i><i>走</i><i>转</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b11.jpg" alt="第6句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b12.jpg" alt="第6句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>后腿屈膝</b><em>后腿屈膝抬起，身体前倾</em></div><span class="tm">48.0s</span></li><li><span class="no">2</span><div><b>上举立起</b><em>双手上举，身体直起来</em></div><span class="tm">49.1s</span></li><li><span class="no">3</span><div><b>侧平转右</b><em>双臂平开，身体转向右</em></div><span class="tm">50.3s</span></li><li><span class="no">4</span><div><b>提膝上托</b><em>提膝，一只手向上托</em></div><span class="tm">51.5s</span></li><li><span class="no">5</span><div><b>开手弓步</b><em>双臂一前一后打开，弓步</em></div><span class="tm">52.7s</span></li><li><span class="no">6</span><div><b>一上一下</b><em>一臂上举、一臂下垂</em></div><span class="tm">53.8s</span></li><li><span class="no">7</span><div><b>平开走位</b><em>双臂平开，脚下走动</em></div><span class="tm">55.0s</span></li><li><span class="no">8</span><div><b>上举转身</b><em>一臂上举，身体转过去</em></div><span class="tm">56.2s</span></li></ul>
+    </section>
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第七句</span>
+        <span class="phsum">后仰 · 合抱 · 收合 · 前伸</span>
+        <span class="phtime">57–66s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>仰</i><i>举</i><i>抱</i><i>开</i><i>收</i><i>伸</i><i>举</i><i>弓</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b13.jpg" alt="第7句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b14.jpg" alt="第7句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>后仰开手</b><em>双臂打开，上身向后仰、仰头</em></div><span class="tm">57.4s</span></li><li><span class="no">2</span><div><b>上举转右</b><em>一臂上举，转向右</em></div><span class="tm">58.6s</span></li><li><span class="no">3</span><div><b>合抱转身</b><em>双手在身前合抱，转回来</em></div><span class="tm">59.7s</span></li><li><span class="no">4</span><div><b>开手朝左</b><em>双臂打开，身体朝左</em></div><span class="tm">60.9s</span></li><li><span class="no">5</span><div><b>收合走位</b><em>双手收合，脚下走位</em></div><span class="tm">62.1s</span></li><li><span class="no">6</span><div><b>前伸点地</b><em>一手前伸，脚尖点地</em></div><span class="tm">63.3s</span></li><li><span class="no">7</span><div><b>上举转右</b><em>一臂上举，转向右</em></div><span class="tm">64.4s</span></li><li><span class="no">8</span><div><b>开手弓步</b><em>双臂打开落成弓步</em></div><span class="tm">65.6s</span></li></ul>
+    </section>
+    <section class="ph">
+      <div class="phhead">
+        <span class="phno">第八句</span>
+        <span class="phsum">合抱 · 推掌 · 侧平 · 定格</span>
+        <span class="phtime">67–75s</span>
+      </div>
+      <div class="score"><span class="lab">谱</span><i>抱</i><i>伸</i><i>推</i><i>平</i><i>转</i><i>蹲</i><i>叉</i><i>后</i></div>
+      <img loading="lazy" class="strip only-d" src="./img/b15.jpg" alt="第8句 八拍">
+      <img loading="lazy" class="strip only-m" src="./img/b16.jpg" alt="第8句 八拍">
+      <ul class="beats"><li><span class="no">1</span><div><b>合抱转身</b><em>双手在胸前合抱，身体转</em></div><span class="tm">66.8s</span></li><li><span class="no">2</span><div><b>前伸弓步</b><em>双手向前伸，弓步</em></div><span class="tm">68.0s</span></li><li><span class="no">3</span><div><b>推掌前倾</b><em>双手推出，上身前倾</em></div><span class="tm">69.2s</span></li><li><span class="no">4</span><div><b>侧平打开</b><em>双臂平开，弓步</em></div><span class="tm">70.3s</span></li><li><span class="no">5</span><div><b>上举转身</b><em>一臂上举，身体转</em></div><span class="tm">71.5s</span></li><li><span class="no">6</span><div><b>一前一后蹲</b><em>双臂前后错开，半蹲下去</em></div><span class="tm">72.7s</span></li><li><span class="no">7</span><div><b>上举交叉</b><em>一臂上举，双脚交叉</em></div><span class="tm">73.9s</span></li><li><span class="no">8</span><div><b>上举后腿</b><em>一臂上举，后腿抬起</em></div><span class="tm">75.1s</span></li></ul>
+    </section>
+
+  <section class="ph" style="background:rgba(166,57,44,.04)">
+    <div class="phhead"><span class="phno">尾声</span><span class="phsum">控制 · 定格 · 收势</span><span class="phtime">76–79s</span></div>
+    <ul class="beats">
+      <li><span class="no">1</span><div><b>后腿控制</b><em>后腿保持高度，立腿绷直，身体稳住</em></div><span class="tm">76.2s</span></li>
+      <li><span class="no">2</span><div><b>定格</b><em>定住三秒不晃，眼神给出去</em></div><span class="tm">77.4s</span></li>
+      <li><span class="no">3</span><div><b>收势</b><em>手放下，走开</em></div><span class="tm">78.6s</span></li>
+    </ul>
+  </section>
+
+  <h2>按这个顺序练</h2>
+  <ol class="steps">
+    <li><b>一句一句来</b><span>一次只练一句，八拍跳顺了再下一句。八句一起记一定会乱。</span></li>
+    <li><b>先记「谱」，再做动作</b><span>把八个字背下来（起开沉托抱推斜收），比记画面快得多。</span></li>
+    <li><b>对着原视频跳</b><span>数到第几拍就走第几个动作。哪一拍跟不上，就把那一拍单独做三遍。</span></li>
+    <li><b>两句一接</b><span>第一句接第二句、第二句接第三句……接缝单独练，比整段重跳有用。</span></li>
+    <li><b>复盘只看卡住的那拍</b><span>别从头看视频，直接拖到时间点，看两秒就够。</span></li>
+  </ol>
+
+    <h2>没有视频也能照着练</h2>
+  <div class="files">
+    这页只带图，视频没放上来（太大）。用的时候：<br>
+    ① 把老师数拍的原视频放在一边，音量开大，跟着数；<br>
+    ② 数到第几拍，瞄一眼这页对应的那一格，确认脚、重心、手；<br>
+    ③ 一句（8 拍）跳顺了再往下走一句，别整段重来。<br>
+    需要分句循环版、慢速版视频，私下找我要。
+  </div>
+
+  <footer>《宋词之外》· 八句六十四拍<br><a href="./overview.html">看 16 字口诀版 →</a></footer>
+</div>
+</body>
+</html>

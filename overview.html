@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="古典舞《宋词之外》十六字口诀：四句十六个字，先记骨架再填细节。">
+<meta property="og:title" content="《宋词之外》· 十六字口诀">
+<title>《宋词之外》· 十六字口诀</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#F6F2EA; --paper:#FFFDF8; --ink:#23201D; --muted:#7C7369;
+    --accent:#A6392C; --accent2:#4C6570; --line:rgba(35,32,29,.12);
+  }
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:0 0 60px; overflow-x:hidden;
+  }
+  .serif{font-family:"Songti SC","Noto Serif SC",Georgia,serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 18px}
+
+  section{margin:38px 0}
+  h2{font-family:"Songti SC","Noto Serif SC",serif;font-size:19px;font-weight:600;letter-spacing:.05em;
+      display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  h2::before{content:"";width:7px;height:7px;background:var(--accent);border-radius:50%;flex:none;margin-top:1px}
+  .lead{color:var(--muted);font-size:14.5px;margin:-6px 0 18px}
+
+  /* 口诀 */
+  .kou{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:8px 6px;
+        box-shadow:0 2px 14px rgba(35,32,29,.04)}
+  .kline{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:14px 14px;border-bottom:1px dashed var(--line)}
+  .kline:last-child{border-bottom:0}
+  .kno{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(166,57,44,.09);color:var(--accent);
+       font-size:12px;display:grid;place-items:center}
+  .kch{font-family:"Songti SC","Noto Serif SC",serif;font-size:clamp(19px,5.2vw,26px);letter-spacing:.14em;font-weight:600;white-space:nowrap}
+  .kname{margin-left:auto;font-size:12px;color:var(--muted);text-align:right;line-height:1.4;flex:none;max-width:42%}
+
+  /* why */
+  .why{display:grid;gap:10px}
+  .why div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px}
+  .why b{color:var(--accent)}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:13px;overflow:hidden;
+        box-shadow:0 2px 12px rgba(35,32,29,.045)}
+  .pic{position:relative;aspect-ratio:4/5;overflow:hidden;background:#EDE7DC}
+  .pic img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.94) contrast(1.02)}
+  .num{position:absolute;top:8px;left:8px;background:rgba(250,247,240,.93);color:var(--ink);
+       font-size:11px;letter-spacing:.06em;padding:2px 7px;border-radius:20px;font-variant-numeric:tabular-nums}
+  .tm{position:absolute;bottom:8px;right:8px;background:rgba(20,18,16,.62);color:#F7F2E8;
+       font-size:11px;padding:2px 7px;border-radius:20px;font-variant-numeric:tabular-nums}
+  .cap{padding:11px 12px 13px}
+  .ch{font-family:"Songti SC","Noto Serif SC",serif;font-size:27px;font-weight:600;line-height:1.1;color:var(--accent)}
+  .nm{font-size:12.5px;color:var(--accent2);letter-spacing:.04em;margin:3px 0 8px}
+  .cap p{font-size:12.5px;line-height:1.62;color:#4A443D;display:flex;gap:6px;margin-top:4px}
+  .cap p b{flex:none;color:var(--muted);font-weight:400;font-size:11px;border:1px solid var(--line);
+           border-radius:3px;height:17px;line-height:16px;padding:0 4px;margin-top:2px}
+  .cap p span{flex:1;min-width:0}
+  .cap .tip{color:#8B8177;font-size:12px;display:block;border-top:1px dashed var(--line);margin-top:9px;padding-top:8px}
+  .cap .tip::before{content:"易错 · ";color:var(--accent);opacity:.8}
+
+  /* steps */
+  ol.steps{list-style:none;counter-reset:s;display:grid;gap:10px}
+  ol.steps li{counter-increment:s;background:var(--paper);border:1px solid var(--line);border-radius:12px;
+              padding:14px 16px 14px 48px;position:relative;font-size:14.5px}
+  ol.steps li::before{content:counter(s);position:absolute;left:14px;top:13px;width:22px;height:22px;
+       border-radius:50%;background:var(--accent);color:#fff;font-size:12px;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+  ol.steps b{color:var(--ink)}
+  ol.steps span{color:var(--muted);display:block;font-size:13.5px;margin-top:2px}
+
+  .help{display:grid;gap:10px}
+  .help div{border-left:2px solid var(--accent);background:rgba(166,57,44,.045);padding:12px 14px;border-radius:0 10px 10px 0;font-size:14.5px}
+
+  .files{font-size:13.5px;color:#4A443D;line-height:2.1}
+  .files a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(166,57,44,.3)}
+  .files code{background:rgba(35,32,29,.055);border-radius:4px;padding:1px 6px;font-size:12px;color:#3E3831}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:46px;letter-spacing:.08em}
+  @media(max-width:560px){ .kname{width:100%;max-width:none;margin-left:38px;text-align:left} }
+  @media(min-width:640px){ .grid{grid-template-columns:repeat(4,1fr)} }
+  footer a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(166,57,44,.35);display:inline-block;margin-top:8px}
+  .files a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(166,57,44,.3)}
+  header{padding:54px 0 26px;text-align:center;position:relative}
+  .kicker{font-size:11.5px;letter-spacing:.44em;color:var(--muted);text-indent:.44em}
+  h1.piece{font-family:"Songti SC","Noto Serif SC",serif;font-size:clamp(32px,8.6vw,56px);font-weight:600;letter-spacing:.18em;text-indent:.18em;margin:16px 0 0;line-height:1.24}
+  h1.piece em{font-style:normal;color:var(--accent)}
+  h1.piece .mk{font-size:.58em;color:#C0B7AA;font-weight:400;letter-spacing:0;vertical-align:.08em}
+  .tag{font-family:"Songti SC","Noto Serif SC",serif;font-size:15px;letter-spacing:.2em;color:#8B8175;margin:16px 0 0}
+  .sub{color:var(--muted);font-size:14px;margin-top:14px;line-height:1.85}
+  .rule{width:44px;height:1px;background:var(--accent);margin:24px auto 0;opacity:.5}
+  .seal{position:absolute;right:4px;top:52px;width:40px;height:40px;border:1.4px solid rgba(166,57,44,.5);border-radius:3px;color:rgba(166,57,44,.82);font-family:"Songti SC","Noto Serif SC",serif;font-size:15px;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:0;display:grid;place-items:center}
+  .switch{display:flex;justify-content:center;align-items:center;gap:11px;margin-top:20px;font-size:12.5px;letter-spacing:.08em}
+  .switch a{color:var(--muted);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+  .switch a.on{color:var(--accent);border-bottom-color:rgba(166,57,44,.45)}
+  .switch i{width:3px;height:3px;border-radius:50%;background:#C6BEB3;display:block}
+  @media(max-width:560px){ .seal{display:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">古 典 舞 · 口 诀 版</div>
+    <h1 class="piece"><span class="mk">《</span>宋词<em>之外</em><span class="mk">》</span></h1>
+    <p class="tag">十六字 · 四句</p>
+    <p class="sub">把整支舞收成十六个字。<br>先立骨架，再去看每一拍怎么填。</p>
+    <div class="rule"></div>
+    <nav class="switch"><a href="./index.html">逐拍分解</a><i></i><a class="on" href="./overview.html">口诀版</a></nav>
+    <div class="seal">宋詞</div>
+  </header>
+
+  <section>
+    <h2>口诀</h2>
+    <p class="lead">四字一句，念出来打拍子。念顺了，动作就串上了。</p>
+    <div class="kou"><div class="kline"><span class="kno">一</span><span class="kch">托 转 提 压</span><span class="kname">第一句 · 起势到俯身</span></div><div class="kline"><span class="kno">二</span><span class="kch">后 开 抱 举</span><span class="kname">第二句 · 后腿到上举</span></div><div class="kline"><span class="kno">三</span><span class="kch">后 移 云 收</span><span class="kname">第三句 · 走位到转身</span></div><div class="kline"><span class="kno">四</span><span class="kch">开 合 托 定</span><span class="kname">第四句 · 开合到定格</span></div></div>
+  </section>
+
+  <section>
+    <h2>为什么记不住</h2>
+    <p class="lead">不是记性差，是记的方式不对。</p>
+    <div class="why">
+      <div>你在记 <b>连续的画面</b>。画面有几千帧，但大脑一次只能抓 4 个点——所以要先把它切成 16 个「停点」。</div>
+      <div>你在 <b>跟着跳</b>。跟着跳会有「我会了」的错觉，视频一关就断片。正确做法是看一眼 → 走开 → 自己做。</div>
+      <div>你在 <b>从头撸到尾</b>。每次重来都在重复前 10 秒，后半段永远没练到。要一句一句过。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>16 个定格点</h2>
+    <p class="lead">每张卡只记三件事：<b>脚踩哪、重心在哪、手在哪</b>。手指和眼神先别管。<br>
+    左右我故意没写死——对着镜子练时最容易把左右绕晕，按「前/后/旁/交叉 + 重心」记反而更牢。</p>
+    <div class="grid">
+      <article class="card">
+        <div class="pic"><img src="./img/c01.jpg" alt="托"><span class="num">01</span><span class="tm">2s</span></div>
+        <div class="cap">
+          <div class="ch">托</div>
+          <div class="nm">起势上托</div>
+          <p><b>脚</b><span>并步站，重心在一条腿，另一脚脚尖前点</span></p>
+          <p><b>手</b><span>单臂上举到耳后，另一手垂在体侧</span></p>
+          <p class="tip">起手别耸肩，肩沉下去才好看</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c02.jpg" alt="转"><span class="num">02</span><span class="tm">6s</span></div>
+        <div class="cap">
+          <div class="ch">转</div>
+          <div class="nm">转身大掖步</div>
+          <p><b>脚</b><span>一腿屈膝承重，另一腿向斜前伸直、脚尖点地</span></p>
+          <p><b>手</b><span>双臂一前一后，拉成一条斜线</span></p>
+          <p class="tip">转的是上身，脚下先别抢</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c03.jpg" alt="提"><span class="num">03</span><span class="tm">10s</span></div>
+        <div class="cap">
+          <div class="ch">提</div>
+          <div class="nm">提膝双托</div>
+          <p><b>脚</b><span>单腿立，另一膝提到腰高、绷脚</span></p>
+          <p><b>手</b><span>双手在头顶上方合抱</span></p>
+          <p class="tip">立腿要直，胯别往外翻</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c04.jpg" alt="压"><span class="num">04</span><span class="tm">14s</span></div>
+        <div class="cap">
+          <div class="ch">压</div>
+          <div class="nm">俯身下压</div>
+          <p><b>脚</b><span>前后大开，前腿屈、后腿直</span></p>
+          <p><b>手</b><span>双手顺势落到膝前下方</span></p>
+          <p class="tip">从胯折，不是从腰弯</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c05.jpg" alt="后"><span class="num">05</span><span class="tm">18s</span></div>
+        <div class="cap">
+          <div class="ch">后</div>
+          <div class="nm">后腿顺风旗</div>
+          <p><b>脚</b><span>后腿向后屈膝抬起</span></p>
+          <p><b>手</b><span>一臂上举、一臂侧平</span></p>
+          <p class="tip">挑腿时胸口往上顶，别低头</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c06.jpg" alt="开"><span class="num">06</span><span class="tm">21s</span></div>
+        <div class="cap">
+          <div class="ch">开</div>
+          <div class="nm">双臂打开</div>
+          <p><b>脚</b><span>大八字步，重心居中</span></p>
+          <p><b>手</b><span>双臂侧平打开，手心向下</span></p>
+          <p class="tip">到手平就停，别抬过头</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c07.jpg" alt="抱"><span class="num">07</span><span class="tm">22s</span></div>
+        <div class="cap">
+          <div class="ch">抱</div>
+          <div class="nm">云手收抱</div>
+          <p><b>脚</b><span>重心回单腿，另一脚前点</span></p>
+          <p><b>手</b><span>双手收到胸前抱圆</span></p>
+          <p class="tip">像抱个气球，肘别夹死</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c08.jpg" alt="举"><span class="num">08</span><span class="tm">24s</span></div>
+        <div class="cap">
+          <div class="ch">举</div>
+          <div class="nm">双臂上举</div>
+          <p><b>脚</b><span>双腿大开，重心居中</span></p>
+          <p><b>手</b><span>双臂上举成 V</span></p>
+          <p class="tip">举到耳后，别夹脖子</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c09.jpg" alt="后"><span class="num">09</span><span class="tm">27s</span></div>
+        <div class="cap">
+          <div class="ch">后</div>
+          <div class="nm">后腿山膀</div>
+          <p><b>脚</b><span>后腿伸直向后抬起</span></p>
+          <p><b>手</b><span>双臂侧平</span></p>
+          <p class="tip">上身立住，别跟着趴</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c10.jpg" alt="移"><span class="num">10</span><span class="tm">31s</span></div>
+        <div class="cap">
+          <div class="ch">移</div>
+          <div class="nm">移步托掌</div>
+          <p><b>脚</b><span>交叉步移动——这一步是走位</span></p>
+          <p><b>手</b><span>一手斜上托，一手在胯旁</span></p>
+          <p class="tip">先认方向，再管手</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c11.jpg" alt="云"><span class="num">11</span><span class="tm">34s</span></div>
+        <div class="cap">
+          <div class="ch">云</div>
+          <div class="nm">云手绕圈</div>
+          <p><b>脚</b><span>弓步，重心在前腿</span></p>
+          <p><b>手</b><span>双手在体侧划圆、抱回</span></p>
+          <p class="tip">手走圆线，别走折线</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c12.jpg" alt="收"><span class="num">12</span><span class="tm">39s</span></div>
+        <div class="cap">
+          <div class="ch">收</div>
+          <div class="nm">转身收手</div>
+          <p><b>脚</b><span>踏步并拢</span></p>
+          <p><b>手</b><span>双手收到身前落下</span></p>
+          <p class="tip">「收」要收住，不是随手放下</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c13.jpg" alt="开"><span class="num">13</span><span class="tm">43s</span></div>
+        <div class="cap">
+          <div class="ch">开</div>
+          <div class="nm">开手弓步</div>
+          <p><b>脚</b><span>弓步，上身前倾</span></p>
+          <p><b>手</b><span>双臂向两侧平开</span></p>
+          <p class="tip">前倾时尾椎别翘出去</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c14.jpg" alt="合"><span class="num">14</span><span class="tm">46s</span></div>
+        <div class="cap">
+          <div class="ch">合</div>
+          <div class="nm">合手半蹲</div>
+          <p><b>脚</b><span>双脚交叉，半蹲</span></p>
+          <p><b>手</b><span>双手在身前合抱</span></p>
+          <p class="tip">蹲靠大腿，别塌腰</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c15.jpg" alt="托"><span class="num">15</span><span class="tm">47s</span></div>
+        <div class="cap">
+          <div class="ch">托</div>
+          <div class="nm">交叉上托</div>
+          <p><b>脚</b><span>双脚交叉站住</span></p>
+          <p><b>手</b><span>单臂上举，另一手垂在体侧</span></p>
+          <p class="tip">先把交叉步踩稳，再抬手</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="pic"><img src="./img/c16.jpg" alt="定"><span class="num">16</span><span class="tm">50s</span></div>
+        <div class="cap">
+          <div class="ch">定</div>
+          <div class="nm">后腿定格</div>
+          <p><b>脚</b><span>后腿伸直抬到腰高，立腿绷直</span></p>
+          <p><b>手</b><span>单臂上举</span></p>
+          <p class="tip">定住 3 秒不晃，再收势</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>五步练法</h2>
+    <p class="lead">按顺序来，别跳步。每一步都是下一步的前提。</p>
+    <ol class="steps">
+      <li><b>先念顺口诀</b><span>不看视频，把四行 16 个字念熟。走路、等电梯都能念。</span></li>
+      <li><b>只走脚下</b><span>手放腰上，只做位置和重心。这步对了，动作就成了一大半。</span></li>
+      <li><b>只做手上</b><span>站着不动，按口诀把 16 个手位摆出来。手比脚容易，先拿分。</span></li>
+      <li><b>专练接缝</b><span>每两个字之间单独做 3 遍（托→转、转→提……）。你忘的从来不是动作，是接缝。</span></li>
+      <li><b>盲跳检验</b><span>关掉视频，边念口诀边跳。卡在第几个字，就只回看那 2 秒，不要重头再来。</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>卡壳急救</h2>
+    <div class="help">
+      <div><b>卡在中间</b>：别从头开始。只练「卡点前一个动作 + 卡点」，练 5 遍，接缝就焊死了。</div>
+      <div><b>手忘了</b>：先保脚和重心，手按口诀那个字给个大概位置，别停下来想。跳完整比跳正确重要。</div>
+      <div><b>整段乱</b>：倒着来。从「定」往前四个一组，倒着记比顺着记更牢——因为结尾记得最清楚。</div>
+      <div><b>睡前一遍、起床一遍</b>：这两天各来一次，比白天硬练两小时管用。睡眠会把动作固化下来。</div>
+    </div>
+  </section>
+
+  <section>
+      <h2>怎么配合视频练</h2>
+    <div class="files">
+      这页只有图，视频没放上来。练的时候：<br>
+      对着老师发的原视频，卡在第几个字，就拖回去看那 2 秒，别整段重来。<br>
+      想看逐拍版本（8 句 × 8 拍）→ <a href="./index.html">点这里</a>。
+    </div>
+  </section>
+
+  <footer>《宋词之外》· 十六字口诀<br><a href="./index.html">看逐拍分解版 →</a></footer>
+</div>
+</body>
+</html>
